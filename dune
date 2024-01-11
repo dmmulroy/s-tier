@@ -7,10 +7,9 @@
 
 (dirs :standard \ node_modules)
 
-
-; (melange.emit
-;  (target output)
-;  (alias sexpression_test)
-;  (libraries s_tier)
-;  (module_systems
-;   (es6 mjs)))
+(melange.emit
+ (target output)
+ (alias sexpression_test)
+ (libraries s_tier)
+ (module_systems
+  (es6 mjs)))
