@@ -20,13 +20,13 @@
 
 ; Lists the authors of the project.
 (authors 
-  ("Dillon Mulroy <dillon.mulroy@gmail.com>")
-  ("Leandro Ostera <leandro@abstractmachines.dev>"))
+  "Dillon Mulroy <dillon.mulroy@gmail.com>"
+  "Leandro Ostera <leandro@abstractmachines.dev>")
 
 ; Specifies the maintainers of the project, which can be different from authors.
 (maintainers 
-  ("Dillon Mulroy <dillon.mulroy@gmail.com>")
-  ("Leandro Ostera <leandro@abstractmachines.dev>"))
+  "Dillon Mulroy <dillon.mulroy@gmail.com>"
+  "Leandro Ostera <leandro@abstractmachines.dev>")
 
 ; Declares the license type under which the project is distributed.
 (license MIT)

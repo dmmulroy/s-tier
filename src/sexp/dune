@@ -1,8 +1,8 @@
 (library
- (name sexp))
- ; (modes melange)
- ; (preprocess
- ;  (pps melange.ppx)))
+ (name sexp)
+ (modes melange)
+ (preprocess
+  (pps melange.ppx)))
 
 (ocamllex sexp_lexer)
 

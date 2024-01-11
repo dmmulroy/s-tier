@@ -1,6 +1,6 @@
 (library
  (name s_tier)
- ; (modes melange)
- (libraries sexp csexp))
- ; (preprocess
- ;  (pps melange.ppx)))
+ (modes melange)
+ (libraries sexp csexp)
+ (preprocess
+  (pps melange.ppx)))
