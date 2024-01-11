@@ -1,0 +1,9 @@
+(library
+ (name app)
+ (modes melange)
+ (libraries bindings create_melange_app)
+ (preprocess
+  (pps melange.ppx)))
+
+(ocamllex sexp_lexer)
+(ocamlyacc sexp_parser)
