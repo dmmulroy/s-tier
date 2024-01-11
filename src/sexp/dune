@@ -1,6 +1,9 @@
 (library
- (name s_tier)
+ (name sexp))
  ; (modes melange)
- (libraries sexp csexp))
  ; (preprocess
  ;  (pps melange.ppx)))
+
+(ocamllex sexp_lexer)
+
+(ocamlyacc sexp_parser)
