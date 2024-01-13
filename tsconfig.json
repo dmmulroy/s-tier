@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "ESNext",
+      "DOM",
+      "DOM.Iterable"
+    ] /* The libraries that are available to the compiler. */,
+    "moduleResolution": "nodenext" /* How the compiler "resolves" (finds) modules. */,
+    "module": "esnext" /* Tells the compiler to use ECMAScript modules if possible. */,
+    "allowJs": true /* Allow JavaScript files to be compiled. */,
+    "checkJs": true /* Enable error reporting in JavaScript files. */,
+    "noEmit": true /* Disable emitting files. We're not compiling, so we don't need this. */,
+    "strict": true /* Enable all strict type-checking options. May as well if we're using TypeScript. */
+  },
+  "include": [
+    "./**/*.js",
+    "./**/*.mjs",
+    "./**/*.d.ts",
+    "src/s-tier.d.mts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

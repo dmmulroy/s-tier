@@ -12,8 +12,10 @@
 include Sexp_ast
 
 let from_string str =
-  let lexbuf = Lexing.from_string str in
-  Sexp_parser.sexp Sexp_lexer.main lexbuf
+  try
+    let lexbuf = Lexing.from_string str in
+    Sexp_parser.sexp Sexp_lexer.main lexbuf |> Result.ok
+  with Failure msg -> Result.error msg
 ;;
 
 let rec pp fmt t =

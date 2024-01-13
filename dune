@@ -8,8 +8,12 @@
 (dirs :standard \ node_modules)
 
 (melange.emit
- (target output)
- (alias sexpression_test)
+ (alias s-tier)
+ (target dist)
  (libraries s_tier)
+ (runtime_deps 
+   (glob_files_rec ./src/**.mjs)
+   (glob_files_rec ./src/**.mts))
+ (promote (until-clean))
  (module_systems
   (es6 mjs)))
