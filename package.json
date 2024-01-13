@@ -1,6 +1,6 @@
 {
   "name": "s-tier",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "dist/src/index.mjs",
   "type": "module",
   "types": "types/index.d.ts",
