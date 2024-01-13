@@ -4,6 +4,8 @@ declare module "s-tier" {
   export type Sexp = Brand<void, "Sexp">;
   export type CanonicalSexp = Brand<void, "CanonicalSexp">;
 
+  export function of(value: any[]): Sexp;
+
   /**
    * Constructs an atom.
    * @param {string} value The value of the atom.
