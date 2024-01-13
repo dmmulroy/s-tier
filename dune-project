@@ -48,7 +48,6 @@
    (>= 2.2.0))
   (ocaml
    (>= 5.1.0))
-  compiler-libs
   opam-check-npm-deps)
  ; Tags to categorize or label the package, useful for searches and indexing.
  (tags

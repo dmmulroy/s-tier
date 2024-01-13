@@ -19,7 +19,6 @@ depends: [
   "dune" {>= "3.11"}
   "melange" {>= "2.2.0"}
   "ocaml" {>= "5.1.0"}
-  "compiler-libs"
   "opam-check-npm-deps"
   "odoc" {with-doc}
 ]

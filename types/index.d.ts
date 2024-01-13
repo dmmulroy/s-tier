@@ -5,6 +5,20 @@ declare module "s-tier" {
   export type CanonicalSexp = Brand<void, "CanonicalSexp">;
 
   /**
+   * Constructs an atom.
+   * @param {string} value The value of the atom.
+   * @returns {Sexp} The atom.
+   */
+  export function atom(value: string): Sexp;
+
+  /**
+   * Constructs a list.
+   * @param {Sexp[]} values The elements of the list.
+   * @returns {Sexp} The list.
+   */
+  export function list(...values: Sexp[]): Sexp;
+
+  /**
    * Deserialize a string into an s-expression.
    * @param {string} value The string to deserialize.
    * @returns {Result<Sexp, string>} A Result containing either the s-expression or an error message.
