@@ -27,9 +27,9 @@ declare module "s-tier" {
     export function deserialize(value: string): Result<CanonicalSexp, string>;
     /**
      * Serialize an s-expression into a string.
-     * @param {CanonicalSexp} sexp The canonical s-expression to serialize.
+     * @param {CanonicalSexp | Sexp} sexp The canonical s-expression to serialize.
      * @returns {string} The serialized canonical s-expression.
      */
-    export function serialize(sexp: CanonicalSexp): string;
+    export function serialize(sexp: CanonicalSexp | Sexp): string;
   }
 }
