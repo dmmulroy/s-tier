@@ -1,8 +1,10 @@
 import type { Types, Result } from "melange-ffi";
 
+type Nominal<TName> = Types.Nominal<TName>;
+
 declare module "s-tier" {
-  export type Sexp = Types.Nominal<"Sexp">;
-  export type CanonicalSexp = Types.Nominal<"CanonicalSexp">;
+  export type Sexp = Nominal<"Sexp">;
+  export type CanonicalSexp = Nominal<"CanonicalSexp">;
 
   export function of(value: any[]): Sexp;
 
