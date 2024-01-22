@@ -6,10 +6,8 @@
   "types": "types/index.d.ts",
   "description": "S-tier S-Expression serialization & deserialization for JavaScript powered by OCaml 🐫✨",
   "scripts": {},
-  "peerDependencies": {
-    "melange-ffi": "^0.0.5"
-  },
   "devDependencies": {
+    "melange-ffi": "latest",
     "typescript": "^5.3.3"
   }
 }

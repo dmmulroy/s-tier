@@ -1,8 +1,8 @@
-import type { Brand, Result } from "melange-ffi";
+import type { Types, Result } from "melange-ffi";
 
 declare module "s-tier" {
-  export type Sexp = Brand<void, "Sexp">;
-  export type CanonicalSexp = Brand<void, "CanonicalSexp">;
+  export type Sexp = Types.Nominal<"Sexp">;
+  export type CanonicalSexp = Types.Nominal<"CanonicalSexp">;
 
   export function of(value: any[]): Sexp;
 

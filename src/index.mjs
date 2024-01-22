@@ -1,15 +1,19 @@
 // @ts-nocheck
 import * as Stier from "./s_tier.mjs";
+import { List } from "melange-ffi";
 
 const atom = Stier.atom;
 const list = Stier.list;
 
 function of(value) {
-  if (Array.isArray(value)) {
-    return list(value.map(of));
-  }
+  function _of(value, idx) {
+    if (List.isList(value)) {
+      return list(List.map(_of, value));
+    }
 
-  return atom(value);
+    return atom(value);
+  }
+  return _of(value);
 }
 
 const deserialize = Stier.of_string;

@@ -9,8 +9,7 @@ let of_string str =
          Format.sprintf "There was an error parsing '%s' to an s-expression" str)
 ;;
 
-
-let to_string t = Format.asprintf "%a" Sexp.pp t
+let to_string t = Sexp.to_string t
 
 module Canonical = struct
   let of_string str =

@@ -18,13 +18,8 @@ let from_string str =
   with Failure msg -> Result.error msg
 ;;
 
-let rec pp fmt t =
+let rec to_string t =
   match t with
-  | Atom str -> Format.fprintf fmt "%s" str
-  | List parts ->
-      Format.fprintf fmt "(";
-      Format.pp_print_list
-        ~pp_sep:(fun fmt _ -> Format.fprintf fmt " ")
-        pp fmt parts;
-      Format.fprintf fmt ")"
+  | Atom str -> str
+  | List parts -> "(" ^ String.concat " " (List.map to_string parts) ^ ")"
 ;;
