@@ -8,8 +8,7 @@
   "types": "dist/types/index.d.ts",
   "module": "dist/src/index.mjs",
   "files": [
-    "dist/src/*",
-    "dist/types/*"
+    "dist/*"
   ],
   "scripts": {},
   "devDependencies": {
