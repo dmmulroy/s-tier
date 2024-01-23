@@ -1,6 +1,6 @@
 {
   "name": "s-tier",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "S-tier S-Expression serialization & deserialization for JavaScript powered by OCaml 🐫✨",
   "license": "MIT",
   "type": "module",
