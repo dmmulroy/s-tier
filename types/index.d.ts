@@ -1,4 +1,5 @@
 import type { Result } from "melange-ffi";
+import { NestableArrayOf } from "melange-ffi";
 
 declare const BRAND: unique symbol;
 
@@ -8,7 +9,7 @@ declare module "s-tier" {
   export type Sexp = Brand<void, "Sexp">;
   export type CanonicalSexp = Brand<void, "CanonicalSexp">;
 
-  export function of(value: any[]): Sexp;
+  export function of<T>(value: NestableArrayOf<T>): Sexp;
 
   /**
    * Constructs an atom.
