@@ -10,7 +10,10 @@
   "files": [
     "dist/*"
   ],
-  "scripts": {},
+  "scripts": {
+    "build": "eval $(opam env) && dune build",
+    "publish-patch": "npm run build && npm version patch && npm publish"
+  },
   "devDependencies": {
     "typescript": "^5.3.3"
   },
