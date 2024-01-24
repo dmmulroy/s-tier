@@ -1,11 +1,10 @@
 import type { Result } from "melange-ffi";
 import { NestableArrayOf } from "melange-ffi";
 
-declare const BRAND: unique symbol;
-
-type Brand<T, B> = T & { [BRAND]: B };
-
 declare module "s-tier" {
+  const BRAND: unique symbol;
+  type Brand<T, B> = T & { [BRAND]: B };
+
   export type Sexp = Brand<void, "Sexp">;
   export type CanonicalSexp = Brand<void, "CanonicalSexp">;
 
