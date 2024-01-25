@@ -8,6 +8,18 @@ declare module "s-tier" {
   export type Sexp = Brand<void, "Sexp">;
   export type CanonicalSexp = Brand<void, "CanonicalSexp">;
 
+  /**
+   * Constructs an s-expression from a given value. If the input is an array,
+   * it recursively processes each element to create a list s-expression.
+   * Otherwise, it creates an atom s-expression.
+   *
+   * @param {NestableArrayOf<T>} value - The value to be converted into an s-expression.
+   * The value can be a nested array of type T or a single value of type T.
+   * @returns {Sexp} - The s-expression. If the input is an array, a list s-expression
+   * is returned, constructed from the array elements. For a single value, an atom
+   * s-expression is returned.
+   * @template T - The type of the elements if the input is an array, or the type of the value.
+   */
   export function of<T>(value: NestableArrayOf<T>): Sexp;
 
   /**
