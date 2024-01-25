@@ -13,8 +13,9 @@
  (libraries s_tier)
  (runtime_deps 
    (glob_files_rec ./src/**.mjs)
+   (glob_files_rec ./src/**.ts)
    (glob_files_rec ./types/**)
    (glob_files_rec ./src/**.mts))
- (promote (until-clean))
+ ; (promote (until-clean))
  (module_systems
   (es6 mjs)))

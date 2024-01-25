@@ -4,18 +4,27 @@
   "description": "S-tier S-Expression serialization & deserialization for JavaScript powered by OCaml 🐫✨",
   "license": "MIT",
   "type": "module",
-  "main": "dist/src/index.mjs",
-  "types": "dist/types/index.d.ts",
-  "module": "dist/src/index.mjs",
+  "main": "./dist/src/index.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
   "files": [
     "dist/*"
   ],
   "scripts": {
-    "build": "eval $(opam env) && dune build",
-    "publish-patch": "npm run build && npm version patch && npm publish"
+    "build-ocaml": "eval $(opam env) && dune build",
+    "publish-patch": "npm run build && npm version patch && npm publish",
+    "build": "tsup",
+    "lint": "tsc"
   },
   "devDependencies": {
-    "typescript": "^5.3.3"
+    "bun-types": "1.0.20",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3",
+    "@microsoft/api-extractor": "^7.39.3"
   },
   "dependencies": {
     "melange-ffi": "latest"
