@@ -16,8 +16,9 @@
   ],
   "scripts": {
     "build-ocaml": "eval $(opam env) && dune build",
+    "build-typescript": "tsup",
+    "build": "npm run build-ocaml && npm run build-typescript",
     "publish-patch": "npm run build && npm version patch && npm publish",
-    "build": "tsup",
     "lint": "tsc"
   },
   "devDependencies": {

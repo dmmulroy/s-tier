@@ -8,5 +8,5 @@ export default defineConfig({
   outDir: "dist",
   sourcemap: true,
   clean: true,
-  experimentalDts: true,
+  dts: true,
 });
