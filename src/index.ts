@@ -3,21 +3,26 @@ import { List, NestableArrayOf, Result } from "melange-ffi";
 import * as Stier from "./s_tier.mjs";
 
 declare const BRAND: unique symbol;
-type Brand<T, B> = T & { [BRAND]: B };
+declare const TYPE_BRAND: unique symbol;
+type Brand<T, B> = { [BRAND]: B; [TYPE_BRAND]: T };
+type Nominal<T, TSymbol extends symbol> = Brand<T, TSymbol>;
+
+declare const SEXP: unique symbol;
+declare const CANONICAL_SEXP: unique symbol;
 
 /**
  * Represents a symbolic expression (s-expression). This type is used to encapsulate
  * the concept of an s-expression, commonly utilized in Lisp-like languages,
  * representing data in a tree-like structure.
  */
-export type Sexp = Brand<void, "Sexp">;
+export type Sexp = Nominal<void, typeof SEXP>;
 
 /**
  * Represents a canonical symbolic expression (canonical s-expression). This type is
  * used for a standardized representation of an s-expression, ensuring consistent
  * formatting and ordering of elements.
  */
-export type CanonicalSexp = Brand<void, "CanonicalSexp">;
+export type CanonicalSexp = Nominal<void, typeof CANONICAL_SEXP>;
 
 /**
  * Constructs an atom.
@@ -30,11 +35,11 @@ const atom: (value: string) => Sexp = Stier.atom as unknown as (
 
 /**
  * Constructs a list.
- * @param {Sexp[]} values The elements of the list.
+ * @param {List<Sexp>} values The elements of the list.
  * @returns {Sexp} The list.
  */
-const list: (...values: Sexp[]) => Sexp = Stier.list as unknown as (
-  ...values: Sexp[]
+const list: (values: List<Sexp>) => Sexp = Stier.list as unknown as (
+  values: List<Sexp>,
 ) => Sexp;
 
 /**
