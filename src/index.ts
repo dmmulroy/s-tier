@@ -8,7 +8,6 @@ type Brand<T, B> = { [BRAND]: B; [TYPE_BRAND]: T };
 type Nominal<T, TSymbol extends symbol> = Brand<T, TSymbol>;
 
 declare const SEXP: unique symbol;
-declare const CANONICAL_SEXP: unique symbol;
 
 /**
  * Represents a symbolic expression (s-expression). This type is used to encapsulate
@@ -16,13 +15,6 @@ declare const CANONICAL_SEXP: unique symbol;
  * representing data in a tree-like structure.
  */
 export type Sexp = Nominal<void, typeof SEXP>;
-
-/**
- * Represents a canonical symbolic expression (canonical s-expression). This type is
- * used for a standardized representation of an s-expression, ensuring consistent
- * formatting and ordering of elements.
- */
-export type CanonicalSexp = Nominal<void, typeof CANONICAL_SEXP>;
 
 /**
  * Constructs an atom.
@@ -73,7 +65,7 @@ const deserialize: (value: string) => Result<Sexp, string> = Stier.of_string;
  * @param {string} value The string to deserialize.
  * @returns {Result<CanonicalSexp, string>} A Result containing either the s-expression or an error message.
  */
-const deserializeCanonical: (value: string) => Result<CanonicalSexp, string> =
+const deserializeCanonical: (value: string) => Result<Sexp, string> =
   Stier.Canonical.of_string;
 
 /**
@@ -88,12 +80,31 @@ const serialize: (sexp: Sexp) => string = Stier.to_string;
  * @param {CanonicalSexp | Sexp} sexp The canonical s-expression to serialize.
  * @returns {string} The serialized canonical s-expression.
  */
-const serializeCanonical: (sexp: CanonicalSexp | Sexp) => string =
-  Stier.Canonical.to_string;
+const serializeCanonical: (sexp: Sexp) => string = Stier.Canonical.to_string;
+
+/**
+ * Determines whether two s-expressions are equal.
+ * @param {Sexp} a The first s-expression.
+ * @param {Sexp} b The second s-expression.
+ * @returns {boolean} True if the s-expressions are equal, false otherwise.
+ */
+function equal(a: Sexp, b: Sexp): boolean {
+  return serialize(a) === serialize(b);
+}
 
 const Canonical = {
+  /**
+   * Deserialize a string into an s-expression.
+   * @param {string} value The string to deserialize.
+   * @returns {Result<CanonicalSexp, string>} A Result containing either the s-expression or an error message.
+   */
   deserialize: deserializeCanonical,
+  /**
+   * Serialize an s-expression into a string.
+   * @param {CanonicalSexp | Sexp} sexp The canonical s-expression to serialize.
+   * @returns {string} The serialized canonical s-expression.
+   */
   serialize: serializeCanonical,
 } as const;
 
-export { of, atom, list, deserialize, serialize, Canonical };
+export { of, atom, list, deserialize, serialize, equal, Canonical };

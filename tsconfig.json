@@ -21,7 +21,9 @@
     ]
   },
   "include": [
-    "./_build/default/dist/src/**.mjs"
+    "./_build/default/dist/src/**.mjs",
+    "./_build/default/dist/src/**.ts",
+    "./src/**/*.ts"
   ],
   "exclude": []
 }
