@@ -1,16 +1,12 @@
-<h1 align="center">
-  🌟 S-Tier 🌟
-</h1>
-<p align="center">
+<div align="center">
+  <img alt="the most s-tier logo of all time" width=600 src="https://github.com/dmmulroy/s-tier/assets/2755722/17ff28bf-4611-41d4-9e0d-fd00a35efaba" />
+</div>
+<h2 align="center">
 The s-tier npm library for s-expression serialization and deserialization.
-</p>
+</h2>
 <p align="center">
   Start using S-Tier today with <code>npm install s-tier</code>
 </p>
-<div align="center">
-PRs-Welcome
-
-</div>
 
 <h2 id="about">About S-Tier</h2>
 S-Tier is a  library in the npm ecosystem for efficient and extensive serialization and deserialization of s-expressions. It's unique in offering both standard and canonical s-expression (de)serialization, making it an indispensable tool for developers working with these formats.
