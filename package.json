@@ -4,7 +4,7 @@
   "description": "S-tier S-Expression serialization & deserialization for JavaScript powered by OCaml 🐫✨",
   "license": "MIT",
   "type": "module",
-  "main": "./dist/src/index.mjs",
+  "main": "./dist/index.js",
   "exports": {
     ".": {
       "import": "./dist/index.js",

@@ -4,6 +4,7 @@ import * as Stier from "./s_tier.mjs";
 
 declare const BRAND: unique symbol;
 declare const TYPE_BRAND: unique symbol;
+
 type Brand<T, B> = { [BRAND]: B; [TYPE_BRAND]: T };
 type Nominal<T, TSymbol extends symbol> = Brand<T, TSymbol>;
 
@@ -12,8 +13,7 @@ declare const SEXP: unique symbol;
 /**
  * Represents a symbolic expression (s-expression). This type is used to encapsulate
  * the concept of an s-expression, commonly utilized in Lisp-like languages,
- * representing data in a tree-like structure.
- */
+ * representing data in a tree-like structure. */
 export type Sexp = Nominal<void, typeof SEXP>;
 
 /**
